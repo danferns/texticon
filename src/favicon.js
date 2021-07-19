@@ -1,4 +1,4 @@
-function FaviconFallback(name, userOptions) {
+export default function TextIcon(name, userOptions) {
     const options = {
         font: "128px sans-serif",
         size: 256,
