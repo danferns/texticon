@@ -1,2 +1,3 @@
-# faviconfallback
- Fallback images for website favicons, generated based on the site's initials.
+# texticon
+
+TextIcon generates icons based on the initials of a name. 
