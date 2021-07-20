@@ -28,7 +28,14 @@ icon.src = TextIcon(name, {
     circle: true,
     size: 256,
     font: "128px Helvetica",
-    randomSeed: 1234
+    randomSeed: 1234,
+    foreground: {
+        lightness: 0.5
+    },
+    background: {
+        saturation: 0.2,
+        lightness: 0.9
+    }
 });
 ```
 
@@ -55,6 +62,38 @@ Default is `false`.
 A seed used when generating the color of the icon based on its name.
 Randomize this value at each call if you want the same name to have different colors each time.
 Default is `0`.
+
+### background
+
+These parameters adjust the background color. The following values range from `0` to `1`.
+
+#### saturation
+
+The saturation of the background color. Default is `0.5`.
+
+#### lightness 
+
+The lightness of the background color, with `0` being black. Default is `0.8`.
+
+#### alpha
+
+The opacity of the background color, with `0` being completely transparent. Default is `1`.
+
+### foreground
+
+The properties from `background` can also be used for adjusting the text color.
+
+#### saturation
+
+Default is `0.5`.
+
+#### lightness 
+
+Default is `0.5`.
+
+#### alpha
+
+Default is `1`.
 
 
 ## License
