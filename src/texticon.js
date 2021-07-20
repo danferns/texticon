@@ -23,8 +23,8 @@ export default function TextIcon(name, userOptions) {
     const initials = getInitials(name);
     const hue = getHue(name, options.randomSeed);
 
+    // setting up the canvas
     const canvas = document.createElement("canvas");
-
     const devicePixelRatio = Math.max(window.devicePixelRatio, 1);
     const canvasSize = options.size * devicePixelRatio;
     canvas.width = canvasSize;
@@ -33,6 +33,7 @@ export default function TextIcon(name, userOptions) {
     const ctx = canvas.getContext("2d");
     ctx.scale(devicePixelRatio, devicePixelRatio);
 
+    // applying the background
     if (options.circle) ctx.arc(canvasSize/2, canvasSize/2, canvasSize/2, 0, 2 * Math.PI, false);
     else ctx.rect(0, 0, canvasSize, canvasSize);
     ctx.fillStyle = `hsla(${hue}, 
@@ -41,19 +42,21 @@ export default function TextIcon(name, userOptions) {
         ${bg.alpha * 100}%)`;
     ctx.fill();
 
+    // setting up the text
     ctx.font = options.font;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
 
+    // calculating the values used for visually centering the text
     const textMetrics = ctx.measureText(initials);
     const textHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent;
-
     const baselineOffset = textMetrics.actualBoundingBoxAscent;
 
     const textX = canvasSize / 2;
     const textY = (canvasSize - textHeight) / 2 + baselineOffset;
     const maxWidth = canvasSize * 0.9;
 
+    // applying the text
     ctx.fillStyle = `hsla(${hue}, 
         ${fg.saturation * 100}%, 
         ${fg.lightness * 100}%, 
