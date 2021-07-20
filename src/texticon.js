@@ -1,5 +1,5 @@
 export default function TextIcon(name, userOptions) {
-    const options = {
+    let options = {
         font: "128px sans-serif",
         size: 256,
         circle: false,
@@ -8,16 +8,15 @@ export default function TextIcon(name, userOptions) {
             saturation: 0.5,
             lightness: 0.8,
             alpha: 1,
-            ...userOptions.background,
         },
         foreground: {
             saturation: 0.5,
             lightness: 0.5,
             alpha: 1,
-            ...userOptions.foreground,
         },
-        ...userOptions,
     };
+
+    recursiveMerge(userOptions, options)
 
     const bg = options.background;
     const fg = options.foreground;
@@ -82,4 +81,14 @@ function getHue(name, seed = 0) {
         number += seed;
     }
     return number % 360;
+}
+
+function recursiveMerge(from, to) {
+    for (const prop of Object.keys(from)) {
+        if (typeof from[prop] === 'object' && from[prop] !== null) {
+            recursiveMerge(from[prop], to[prop]);
+        } else {
+            to[prop] = from[prop];
+        }
+    }
 }
