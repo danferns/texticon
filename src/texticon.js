@@ -26,13 +26,10 @@ export default function TextIcon(name, userOptions) {
 
     // setting up the canvas
     const canvas = document.createElement("canvas");
-    const devicePixelRatio = Math.max(window.devicePixelRatio, 1);
     const canvasSize = options.size;
     canvas.width = canvasSize;
     canvas.height = canvasSize;
-
     const ctx = canvas.getContext("2d");
-    ctx.scale(devicePixelRatio, devicePixelRatio);
 
     // applying the background
     if (options.circle) ctx.arc(canvasSize/2, canvasSize/2, canvasSize/2, 0, 2 * Math.PI, false);
