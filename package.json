@@ -1,0 +1,26 @@
+{
+  "name": "texticon",
+  "version": "1.0.0",
+  "description": "TextIcon generates icons based on the initials of a name. ",
+  "main": "src/texticon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannywritescode/texticon.git"
+  },
+  "keywords": [
+    "icons",
+    "avatar",
+    "favicons",
+    "text",
+    "logo"
+  ],
+  "author": "Daniel Fernandes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannywritescode/texticon/issues"
+  },
+  "homepage": "https://github.com/dannywritescode/texticon#readme"
+}
