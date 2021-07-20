@@ -9,7 +9,7 @@ TextIcon generates icons based on the initials of a name.
 - The letters are **visually centered**
 - The background can be a circle or a square
 - The hue is generated based on the name
-- - A `randomSeed` can be provided to the hue algorithm
+    - A `randomSeed` can be provided to the hue algorithm
 
 
 ## Installation
@@ -19,16 +19,18 @@ TextIcon generates icons based on the initials of a name.
 
 ## Example
 
-    import TextIcon from "texticon";
+```javascript
+import TextIcon from "texticon";
 
-    const name = "Awesome Name";
-    const icon = document.querySelector("#icon");
-    icon.src = TextIcon(name, {
-        circle: true,
-        size: 256,
-        font: "128px Helvetica",
-        randomSeed: 1234
-    });
+const name = "Awesome Name";
+const icon = document.querySelector("#icon");
+icon.src = TextIcon(name, {
+    circle: true,
+    size: 256,
+    font: "128px Helvetica",
+    randomSeed: 1234
+});
+```
 
 
 ## Options
