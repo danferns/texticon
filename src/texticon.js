@@ -8,11 +8,13 @@ export default function TextIcon(name, userOptions) {
             saturation: 0.5,
             lightness: 0.8,
             alpha: 1,
+            ...userOptions.background,
         },
         foreground: {
             saturation: 0.5,
             lightness: 0.5,
             alpha: 1,
+            ...userOptions.foreground,
         },
         ...userOptions,
     };
@@ -26,7 +28,7 @@ export default function TextIcon(name, userOptions) {
     // setting up the canvas
     const canvas = document.createElement("canvas");
     const devicePixelRatio = Math.max(window.devicePixelRatio, 1);
-    const canvasSize = options.size * devicePixelRatio;
+    const canvasSize = options.size;
     canvas.width = canvasSize;
     canvas.height = canvasSize;
 
