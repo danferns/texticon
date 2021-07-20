@@ -4,8 +4,21 @@ export default function TextIcon(name, userOptions) {
         size: 256,
         circle: false,
         randomSeed: 0,
+        background: {
+            saturation: 0.5,
+            lightness: 0.8,
+            alpha: 1,
+        },
+        foreground: {
+            saturation: 0.5,
+            lightness: 0.5,
+            alpha: 1,
+        },
         ...userOptions,
     };
+
+    const bg = options.background;
+    const fg = options.foreground;
 
     const initials = getInitials(name);
     const hue = getHue(name, options.randomSeed);
@@ -22,7 +35,10 @@ export default function TextIcon(name, userOptions) {
 
     if (options.circle) ctx.arc(canvasSize/2, canvasSize/2, canvasSize/2, 0, 2 * Math.PI, false);
     else ctx.rect(0, 0, canvasSize, canvasSize);
-    ctx.fillStyle = `hsla(${hue}, 50%, 80%, 100%)`;
+    ctx.fillStyle = `hsla(${hue}, 
+        ${bg.saturation * 100}%, 
+        ${bg.lightness * 100}%, 
+        ${bg.alpha * 100}%)`;
     ctx.fill();
 
     ctx.font = options.font;
@@ -38,7 +54,10 @@ export default function TextIcon(name, userOptions) {
     const textY = (canvasSize - textHeight) / 2 + baselineOffset;
     const maxWidth = canvasSize * 0.9;
 
-    ctx.fillStyle = `hsla(${hue}, 50%, 50%, 100%)`;
+    ctx.fillStyle = `hsla(${hue}, 
+        ${fg.saturation * 100}%, 
+        ${fg.lightness * 100}%, 
+        ${fg.alpha * 100}%)`;
     ctx.fillText(initials, textX, textY, maxWidth);
 
     return canvas.toDataURL("image/png");
