@@ -65,35 +65,19 @@ Default is `0`.
 
 ### background
 
-These parameters adjust the background color. The following values range from `0` to `1`.
+These parameters adjust how the background color looks. The following values range from `0` to `1`.
 
-#### saturation
-
-The saturation of the background color. Default is `0.5`.
-
-#### lightness 
-
-The lightness of the background color, with `0` being black. Default is `0.8`.
-
-#### alpha
-
-The opacity of the background color, with `0` being completely transparent. Default is `1`.
+- **saturation**: The saturation of the background color. Default is `0.5`.
+- **lightness**: The lightness of the background color. Default is `0.8`.
+- **alpha**: The opacity of the background color. Default is `1`.
 
 ### foreground
 
-The properties from `background` can also be used for adjusting the text color.
+The properties from [`background`](#background) can also be used for adjusting the text color.
 
-#### saturation
-
-Default is `0.5`.
-
-#### lightness 
-
-Default is `0.5`.
-
-#### alpha
-
-Default is `1`.
+- **saturation**: Default is `0.5`.
+- **lightness**: Default is `0.5`.
+- **alpha**: Default is `1`.
 
 
 ## License
