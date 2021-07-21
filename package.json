@@ -1,6 +1,6 @@
 {
   "name": "texticon",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "TextIcon generates icons based on the initials of a name. ",
   "main": "src/texticon.js",
   "scripts": {
