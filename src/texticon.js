@@ -16,7 +16,7 @@ export default function TextIcon(name, userOptions) {
         },
     };
 
-    recursiveMerge(userOptions, options)
+    recursiveMerge(userOptions, options);
 
     const bg = options.background;
     const fg = options.foreground;
