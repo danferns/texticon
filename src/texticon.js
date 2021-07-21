@@ -81,11 +81,13 @@ function getHue(name, seed = 0) {
 }
 
 function recursiveMerge(from, to) {
-    for (const prop of Object.keys(from)) {
-        if (typeof from[prop] === 'object' && from[prop] !== null) {
-            recursiveMerge(from[prop], to[prop]);
-        } else {
-            to[prop] = from[prop];
+    if (from !== null) {
+        for (const prop of Object.keys(from)) {
+            if (typeof from[prop] === 'object') {
+                recursiveMerge(from[prop], to[prop]);
+            } else {
+                to[prop] = from[prop];
+            }
         }
     }
 }
